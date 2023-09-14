@@ -99,7 +99,9 @@ app.post('/todos',(req,res) => {
 
 app.put('/todos/:id',(req,res)=>{
 
-    const  id =  parseInt(req.params.id);
+    // console.log(req.params.id);
+    // console.log(req.body);
+    const  id =  parseInt(req.body.id);
 
     fs.readFile('dataBase.json','utf8',(err,data)=>{
     let  array = JSON.parse(data);
@@ -132,8 +134,7 @@ function serachIndex(arr,id){
 }
 
 app.delete('/todos/:id',(req,res)=>{
-    const  id =  parseInt(req.params.id);
-
+    const  id =  parseInt(req.body.id);
  fs.readFile('dataBase.json','utf8',(err,data)=>{
     const  array = JSON.parse(data);
     const check =  serachIndex(array,id);
