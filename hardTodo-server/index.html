@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <title>todo</title>
+</head>
+<body>
+    <div class="container">
+    <h3>enter  the title</h3>
+    <input type="text", id="title" placeholder="write the title">
+    <h3>enter  the description</h3>
+    <input type="text", id="description" placeholder="write the description">
+    <button id="submit" onclick="onClick()">Click me</button>
+    </div>
+    
+
+    <script>
+    
+    const submit = document.getElementById('submit');
+
+    submit.addEventListener('click', ()=>{
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+
+        console.log(title)
+        console.log(description);
+
+
+        function parseResponce(data){
+        console.log(data)
+       }
+
+       function callBack(resp){
+            resp.json().then(parseResponce);
+       }
+        
+        fetch('http://localhost:5000/todos',{
+            method: 'POST',
+            body: JSON.stringify(
+            {
+                title: title,
+                description:  description
+            }
+            ),
+            headers:{
+               "Content-Type" : "application/json"
+            }
+           }).then(callBack)
+    })
+  
+
+    </script>
+</body>
+</html>

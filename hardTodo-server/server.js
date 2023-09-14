@@ -42,7 +42,9 @@ const express  =  require('express');
 const port  = 5000;
 const app =  express();
 const fs = require('fs');
-
+// const path = require('path');
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 // 1.GET /todos - Retrieve all todo items
 // Description: Returns a list of all todo items.
@@ -147,10 +149,10 @@ app.delete('/todos/:id',(req,res)=>{
 
 })
 
-
-
-
-
+// 1st way to solve CORS  error
+// app.get('/',(req,res)=>{
+//   res.sendFile(path.join(__dirname,'index.html'));
+// })
 
 app.listen(port,()=>{
     console.log('start ho gyame');
