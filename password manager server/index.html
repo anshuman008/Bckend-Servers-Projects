@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+    background-color: #212121;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #login-page{
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        background-color:  #555555;
+    }
+    #signup-page{
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        width: 30vw;
+        height: 40vh;
+        justify-content: center;
+        align-items: center;
+        background-color: #555555;
+        display: none;
+    }
+    .container{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .option{
+        display: flex;
+    }
+    .log{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 82px;
+        border-radius: 5px;
+        background-color: #555555;
+        color: white;
+        margin: 0 20px;
+    }
+
+    .sign{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 82px;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        margin: 0 20px;
+    }
+
+    
+    button{
+        width: 80%;
+       background-color: #4CAF50;
+       color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+     border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input{
+        width: 80%;
+       padding: 12px 20px;
+       margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+          box-sizing: border-box;
+    }
+    .userInterface{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #4CAF50;
+        border-radius: 50px;
+        color: white;
+        width: 40%;
+        height: 40%;
+    }
+    .wrapper{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+</style>
+    <title>login authrntication</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="userInterface"></div>
+    </div>
+  
+     
+    <div class="container">
+        <div class="option">
+            <div class="log">Login</div>
+            <div class="sign">signup</div>
+           </div>
+        <form id="login-page">
+            <h2  style="color: azure;">Login</h2>
+            <input type="email" id="login-email" placeholder="enter the email" required>
+            <input type="password" id="login-password"  placeholder="enter the password"  required>
+            <button id="login" >login</button>
+            </form>
+        
+            <form id="signup-page">
+                <h2  style="color: azure;">Signup</h2>
+                <input type="email" id="signup-email" placeholder="enter the email" required>
+                <input type="text" id="signup-username" placeholder="enter the ussername" required>
+                <input type="password" id="signup-password"  placeholder="enter the password" required>
+                <button id="signup"">signup</button>
+            </form>
+    </div>
+
+  
+
+
+   
+</body>
+
+<script src="index.js"></script>
+</html>
+
